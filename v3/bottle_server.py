@@ -12,6 +12,7 @@
 # I had to replace cStringIO with io and urllib2 with urllib, for
 # compatibility from 2.x to 3.x Ii was running from /v3/).
 
+from bottledaemon import daemon_run
 from bottle import route, get, request, run, template, static_file
 import StringIO # NB: don't use cStringIO since it doesn't support unicode!!!
 import json
@@ -114,4 +115,5 @@ if n_fail == 0:
 
 if __name__ == "__main__":
     #run(host='localhost', port=8080, reloader=True)
-    run(host='0.0.0.0', port=8003, reloader=True) # make it externally visible - DANGER this is very insecure since there's no sandboxing!
+    daemon_run()
+    # run(host='0.0.0.0', port=8003, reloader=True) # make it externally visible - DANGER this is very insecure since there's no sandboxing!
