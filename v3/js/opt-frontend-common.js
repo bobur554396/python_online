@@ -189,6 +189,7 @@ function initAceEditor(height) {
   pyInputAceEditor.setHighlightActiveLine(false);
   pyInputAceEditor.setShowPrintMargin(false);
   pyInputAceEditor.setBehavioursEnabled(false);
+  pyInputAceEditor.setTheme("ace/theme/mono_industrial");
   pyInputAceEditor.$blockScrolling = Infinity; // kludgy to shut up weird warnings
 
   // auto-grow height as fit
